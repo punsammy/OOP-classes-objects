@@ -2,13 +2,12 @@
 A class defines objects of its type
 Instance of class is initiated from a class that defines a particular set of variables
 
-
 #What is an instance variable?
-An instance variable is within a particular instance of a class. These can be state, attributes, behaviours, etc.
+An instance variable is within a particular instance of a class. These can be state, attributes, behaviours, etc. Instance variables are always private for object. In order to access you need to define a method.
+
 
 #What is an instance method?
 An instance method is like a subroutine that affects the object
-
 
 #How is an instance variable different from a local variable?
 Instance variables are within a class but outside of a method.
@@ -22,3 +21,6 @@ Setter methods - allows you to set the value of an attribute
   ex. attr_writer
 Getter methods - retrieves information about an attribute
   ex. attr_reader
+
+attr_accessor  allows you to do both!
+<!-- All of these are class methods -->

@@ -4,7 +4,6 @@ class Player
     @gold_coins     = 0
     @health_points  = 10
     @lives          = 5
-    @damage         = 1
   end
 
   def level_up
@@ -26,18 +25,22 @@ class Player
   end
 
   def do_battle(damage)
-    @health_points - damage
-  if @health_points<1
-    then
-      @lives - damage,
+      @health_points = @health_points - damage
+    if @health_points<1
+      @lives = @lives - damage
       @health_points = 10
-    return
-  # if @lives == 0
-  #     restart "you died, but you can start over now"
-  #   end
+    end
+    if @lives == 0
+      restart
+      puts "you died, but you can start over now"
+    end
   end
-  # Your class should have an instance method called do_battle that accepts one damage argument and subtracts it from the player's health_points. If health_points falls below one, subtract one from lives and reset health_points to ten. If you have run out of lives, this method should run another method called restart (see below).
-  # The restart instance method should set all attributes back to their starting values (5, 0, and 10).
-
-
 end
+
+amanda = Player.new
+puts amanda.do_battle(5)
+puts amanda.inspect
+puts amanda.do_battle(5)
+puts amanda.inspect
+puts amanda.level_up
+puts amanda.inspect
